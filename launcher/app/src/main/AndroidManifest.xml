@@ -42,26 +42,31 @@
         android:allowBackup="false"
         android:localeConfig="@xml/locales_config">
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:launchMode="singleTask"
-            android:stateNotNeeded="true"
-            android:excludeFromRecents="true"
-            android:clearTaskOnLaunch="true"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|uiMode"
-            android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <!-- Listed in the TV's own app list, so it can be opened from the stock home screen too. -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
+    <activity
+        android:name=".MainActivity"
+        android:exported="true"
+        android:launchMode="singleTask"
+        android:stateNotNeeded="true"
+        android:excludeFromRecents="true"
+        android:clearTaskOnLaunch="true"
+        android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
+        android:screenOrientation="landscape">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HOME" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        <!-- Listed in the TV's own app list, so it can be opened from the stock home too. -->
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+        </intent-filter>
+        <!-- 新增：手机测试用，生成桌面图标 -->
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
 
         <activity
             android:name=".LauncherSettingsActivity"
